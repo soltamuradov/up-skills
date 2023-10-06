@@ -1,0 +1,44 @@
+# Определяем имя рабочего процесса - CI Pipeline
+name: CI Pipeline
+
+# Этот рабочий процесс запускается каждый раз, когда кто-либо совершает push в ветку main
+on:
+  pull_request:
+    branches: [main]
+
+# Здесь определяется список заданий. Прежде всего, код должен быть собран в рамках этапа "build".
+jobs:
+  build:
+    # Задания будут выполняться в runtime environment, которое использует последнюю версию Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # Переключаемся на код последнего коммита
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Устанавливаем необходимую версию Node.js
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.18.0'
+
+      # Устанавливаем зависимости проекта
+      - name: Install dependencies
+        run: npm ci
+
+      # Проверяем форматирование кода
+      - name: Check formatting
+        run: npm run prettier:check
+
+      # # Проверяем код на наличие проблем (lint errors)
+      # - name: Lint
+      #   run: npm run lint
+
+      # # Выполняем тесты
+      - name: Test
+        run: npm test
+
+      # Собираем проект
+      - name: Build
+        run: npm run build:prod
