@@ -1,11 +1,7 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-const App:FC = () => {
-  return (
-    <div>
-      Hello World
-    </div>
-  );
+const App: FC = () => {
+  return <div>Hello World</div>;
 };
 
 export default App;
