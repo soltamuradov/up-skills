@@ -19,8 +19,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["npm run format"],
-    "*.{ts}": ["npm run test"]
+    "*.{ts,tsx}": ["npm run format", "npm run test"]
   },
   "dependencies": {
     "react": "^18.2.0",
