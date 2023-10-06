@@ -13,6 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
