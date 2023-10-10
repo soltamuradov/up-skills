@@ -54,6 +54,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      #Выводим отладочные сообщения
+      - name: Debug Environment Variables
+        run: |
+          echo "SERVER_IP: ${{ secrets.SERVER_IP }}"
+          echo "SERVER_USER: ${{ secrets.SERVER_USER }}"
+          echo "SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}"
+
       # Выполняем SSH команды на сервере
       - name: Execute SSH commands
         uses: appleboy/ssh-action@master
