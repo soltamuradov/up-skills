@@ -67,9 +67,9 @@ jobs:
         with:
           # Секреты, как SERVER_IP, SERVER_USER и SSH_PRIVATE_KEY,
           # представляют собой зашифрованные переменные окружения, которые вы можете настроить в вашем репозитории.
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
+          host: 89.108.103.4
+          username: root
+          password: W9k|%Yp@R@sq
           # Команды, которые нужно выполнить на сервере. Обычно это клонирование кода, установка зависимостей, сборка проекта и его запуск.
           script: |
             # Переходим в директорию проекта на сервере
