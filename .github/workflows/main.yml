@@ -71,9 +71,7 @@ jobs:
             git fetch
             # Принудительно обновляем код проекта до последней версии
             git reset --hard origin/main
-
-            nvm install --lts
             # Устанавливаем зависимости
-            npm ci
+            sudo npm ci
             # Собираем проект
-            npm run build:prod
+            sudo npm run build:prod
