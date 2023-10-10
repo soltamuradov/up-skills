@@ -29,7 +29,7 @@ jobs:
 
       # Собираем проект
       - name: Build
-        run: npm run build
+        run: npm run build:prod
 
       # Проверяем форматирование кода
       - name: Check formatting
@@ -74,6 +74,6 @@ jobs:
             # Устанавливаем зависимости
             npm ci
             # Собираем проект
-            npm run build
+            npm run build:prod
             # Перезапускаем сервер приложения с помощью менеджера процессов PM2
             # pm2 restart server
