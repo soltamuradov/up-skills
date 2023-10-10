@@ -69,9 +69,12 @@ jobs:
             cd up-skills
             # Получаем последние изменения из репозитория
             git fetch
+
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             # Принудительно обновляем код проекта до последней версии
             git reset --hard origin/main
             # Устанавливаем зависимости
-            sudo npm ci
+            npm ci
             # Собираем проект
-            sudo npm run build:prod
+            npm run build:prod
