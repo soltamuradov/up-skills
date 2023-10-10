@@ -1,19 +1,19 @@
-# Определяем имя рабочего процесса - CI Pipeline
-name: CI Pipeline
+# Определяем имя рабочего процесса - CI/CD Pipeline
+name: CI/CD Pipeline
 
 # Этот рабочий процесс запускается каждый раз, когда кто-либо совершает push в ветку main
 on:
-  pull_request:
+  push:
     branches: [main]
 
 # Здесь определяется список заданий. Прежде всего, код должен быть собран в рамках этапа "build".
 jobs:
-  build:
+  ci:
     # Задания будут выполняться в runtime environment, которое использует последнюю версию Ubuntu
     runs-on: ubuntu-latest
 
     steps:
-      # Переключаемся на код последнего коммита
+      # Используется действие для исключения кода из репозитория
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -21,24 +21,59 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.18.0'
+          node-version: '16'
 
       # Устанавливаем зависимости проекта
       - name: Install dependencies
         run: npm ci
 
+      # Собираем проект
+      - name: Build
+        run: npm run build
+
       # Проверяем форматирование кода
       - name: Check formatting
         run: npm run format
 
-      # # Проверяем код на наличие проблем (lint errors)
+      # Проверяем код на наличие проблем (lint errors)
       # - name: Lint
-      #   run: npm run lint
+        # run: npm run lint
 
-      # # Выполняем тесты
+      # Выполняем тесты
       - name: Test
         run: npm test
 
-      # Собираем проект
-      - name: Build
-        run: npm run build:prod
+  # Этап "deploy". Его задача - развернуть код на сервере.
+  # Этот этап начнется только после успешного выполнения этапа "build".
+  cd:
+    needs: ci
+    runs-on: ubuntu-latest
+
+    steps:
+      # Используется действие для исключения кода из репозитория
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Выполняем SSH команды на сервере
+      - name: Execute SSH commands
+        uses: appleboy/ssh-action@master
+        with:
+          # Секреты, как SERVER_IP, SERVER_USER и SSH_PRIVATE_KEY,
+          # представляют собой зашифрованные переменные окружения, которые вы можете настроить в вашем репозитории.
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          # Команды, которые нужно выполнить на сервере. Обычно это клонирование кода, установка зависимостей, сборка проекта и его запуск.
+          script: |
+            # Переходим в директорию проекта на сервере
+            cd up-skills
+            # Получаем последние изменения из репозитория
+            git fetch
+            # Принудительно обновляем код проекта до последней версии
+            git reset --hard origin/main
+            # Устанавливаем зависимости
+            npm ci
+            # Собираем проект
+            npm run build
+            # Перезапускаем сервер приложения с помощью менеджера процессов PM2
+            # pm2 restart server
