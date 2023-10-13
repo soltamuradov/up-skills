@@ -87,4 +87,4 @@ jobs:
             # Собираем build образа из файла Dockerfile
             docker build -t up-skills .
             # Запускаем контейнер
-            docker run --name up-skills -dp 127.0.0.1:3000:3000 up-skills
+            docker run --name up-skills -dp 3000:3000 up-skills
