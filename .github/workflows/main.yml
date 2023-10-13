@@ -69,7 +69,7 @@ jobs:
             cd up-skills
             # Получаем последние изменения из репозитория
             git fetch
-
+            # Указываем путь до папки с Node.js и npm
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             # Принудительно обновляем код проекта до последней версии
@@ -78,3 +78,13 @@ jobs:
             npm ci
             # Собираем проект
             npm run build:prod
+            # Останавливаем контейнер если он запущен и вообще есть
+            docker stop up-skills || true
+            # Удаляем сам контейнер
+            docker rm up-skills || true
+            # Удаляем образ
+            docker rmi up-skills || true
+            # Собираем build образа из файла Dockerfile
+            docker build -t up-skills .
+            # Запускаем контейнер
+            docker run --name up-skills -dp 127.0.0.1:3000:3000 up-skills

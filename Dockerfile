@@ -1,22 +1,22 @@
 # syntax=docker/dockerfile:1
 
 # Используем Node.js как базовый образ
-FROM node:14
+FROM node:18.18
 
 # Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /app
 
-# Копируем все файлы внутрь контейнера
-COPY . .
+#Копируем package.json и package-lock.json
+COPY package.json package-lock.json ./
 
 # Устанавливаем зависимости
 RUN npm install
 
-# Собираем приложение
-# RUN npm run build
+# Копируем все оставшиеся файлы
+COPY . .
 
 # Указываем порт, который будет слушать приложение
-EXPOSE 80
+EXPOSE 3000
 
 # Запускаем приложение
 CMD ["npm", "start"]
