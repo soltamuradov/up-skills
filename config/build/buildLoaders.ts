@@ -10,7 +10,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   };
 
   const cssLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.css$/,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       {
@@ -22,9 +22,10 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
               ? "[path][name]__[local]--[hash:base64:5]"
               : "[hash:base64:8]",
           },
+          importLoaders: 1
         },
       },
-      "sass-loader",
+      'postcss-loader',
     ],
   };
 
