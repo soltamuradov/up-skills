@@ -9,6 +9,15 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   };
 
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
   const cssLoader = {
     test: /\.css$/,
     use: [
@@ -29,5 +38,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  return [typescryptLoader, cssLoader];
+  return [typescryptLoader, cssLoader, fileLoader];
 }
