@@ -22,7 +22,7 @@ export const ConnectionBlock: FC<Props> = ({ className }) => {
           <Text>Union St, Seattle, WA 98101, United States</Text>
         </div>
       </div>
-      <Divider width={1.5} height={116} className="bg-gray-1"/>
+      <Divider width={1.5} height={116} className="bg-gray-1" />
       <div className="flex items-center">
         <div className="mr-6">
           <CallIcon />
@@ -32,7 +32,7 @@ export const ConnectionBlock: FC<Props> = ({ className }) => {
           <Text>(110) 1111-1010</Text>
         </div>
       </div>
-      <Divider width={1.5} height={116} className="bg-gray-1"/>
+      <Divider width={1.5} height={116} className="bg-gray-1" />
       <div className="flex items-center">
         <div className="mr-6">
           <SmsIcon />
