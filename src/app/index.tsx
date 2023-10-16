@@ -10,7 +10,7 @@ const App: FC = () => {
         title="SIMULATION"
         description="Vitae sapien pellentesque habitant morbi nunc. Viverra aliquet  porttitor rhoncus libero justo laoreet sit amet vitae."
       />
-      <ConnectionBlock/>
+      <ConnectionBlock />
     </div>
   );
 };

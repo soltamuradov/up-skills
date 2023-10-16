@@ -9,7 +9,7 @@
     "build:dev": "webpack --env mode=development --config webpack.config.ts",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "test": "jest",
-    "storybook": "storybook dev -p 6006",
+    "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "keywords": [],
@@ -21,9 +21,8 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}":  [
+    "*/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "git add",
       "npm run test"
     ]
   },
