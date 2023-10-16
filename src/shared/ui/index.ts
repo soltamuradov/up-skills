@@ -3,3 +3,5 @@ export * from "./Button";
 export * from "./CircleBlock";
 export * from "./Divider";
 export * from "./UserCard";
+export * from './Title';
+export * from './Text';

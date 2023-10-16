@@ -7,5 +7,5 @@ type Props = {
 };
 
 export const Divider: FC<Props> = ({ className, width = 154, height = 1 }) => {
-  return <div className={`w-[${width}px] h-[${height}px] ${className}`} />;
+  return <div className={className} style={{ width, height }} />;
 };

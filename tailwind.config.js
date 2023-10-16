@@ -12,6 +12,9 @@ module.exports = {
         'gray-1': 'rgba(192, 183, 232, 0.33)',
         'gray-2': '#8176af',
         'gray-3': '#C0B7E8',
+      },
+      borderRadius: {
+        '40': '40px',
       }
     }
   },
