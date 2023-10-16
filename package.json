@@ -21,8 +21,9 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "npm run format",
+    "*.{ts,tsx}":  [
+      "prettier --write",
+      "git add",
       "npm run test"
     ]
   },
