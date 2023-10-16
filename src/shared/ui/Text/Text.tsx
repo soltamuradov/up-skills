@@ -6,5 +6,5 @@ type Props = {
 };
 
 export const Text: FC<Props> = ({ className, children }) => {
-  return <div className={`text-xs font-normal ${className}`}>{children}</div>;
+  return <div className={`text-sm font-normal ${className}`}>{children}</div>;
 };
