@@ -1,2 +1,2 @@
-export * from './LargeText';
-export * from './Text';
+export * from "./LargeText";
+export * from "./Text";
