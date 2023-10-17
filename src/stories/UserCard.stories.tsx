@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { UserCard } from "../shared/ui/UserCard";
+import { UserCard } from "shared";
 import avatar1 from "../img/avatar-1.jpg";
 
 const meta: Meta<typeof UserCard> = {
