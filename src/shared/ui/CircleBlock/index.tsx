@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from 'react';
 
 type Props = {
   size?: number;
@@ -6,7 +6,7 @@ type Props = {
   children?: ReactNode;
 };
 
-export const CircleBlock: FC<Props> = ({ size, className = "", children }) => {
+export const CircleBlock: FC<Props> = ({ size, className = '', children }) => {
   return (
     <div
       className={`rounded-full m-auto p-4 bg-black-2 ${className}`}

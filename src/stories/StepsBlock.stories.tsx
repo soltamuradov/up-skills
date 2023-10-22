@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { StepsBlock } from "shared";
+import type { Meta, StoryObj } from '@storybook/react';
+import { StepsBlock } from 'shared';
 
 const meta: Meta<typeof StepsBlock> = {
   component: StepsBlock,

@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { ConnectionBlock } from "shared";
+import { Meta, StoryObj } from '@storybook/react';
+import { ConnectionBlock } from 'shared';
 
 const meta: Meta<typeof ConnectionBlock> = {
   component: ConnectionBlock,

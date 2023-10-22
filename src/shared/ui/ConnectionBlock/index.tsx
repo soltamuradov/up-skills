@@ -1,8 +1,8 @@
-import { FC } from "react";
-import { CallIcon, LocationIcon, SmsIcon } from "shared/icons";
-import { Title } from "../Title";
-import { Text } from "../Text";
-import { Divider } from "../Divider";
+import { FC } from 'react';
+import { CallIcon, LocationIcon, SmsIcon } from 'shared/icons';
+import { Title } from '../Title';
+import { Text } from '../Text';
+import { Divider } from '../Divider';
 
 type Props = {
   className?: string;

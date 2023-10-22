@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { CircleBlock } from "../CircleBlock";
+import { FC } from 'react';
+import { CircleBlock } from '../CircleBlock';
 
 type Props = {
   size?: number;

@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { ArrowRightIcon, CircleBlock, Icon, Title } from "shared";
+import { FC } from 'react';
+import { ArrowRightIcon, CircleBlock, Icon, Title } from 'shared';
 
 type Props = {
   step: string;
@@ -7,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-export const Step: FC<Props> = ({ step, title = "", className = "" }) => {
+export const Step: FC<Props> = ({ step, title = '', className = '' }) => {
   return (
     <div className={className}>
       <CircleBlock size={200} className="mb-6">

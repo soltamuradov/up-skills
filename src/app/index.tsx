@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { ConnectionBlock, StepsBlock, UserCard } from "shared";
-import avatar1 from "../img/avatar-1.jpg";
+import { FC } from 'react';
+import { ConnectionBlock, StepsBlock, UserCard } from 'shared';
+import avatar1 from '../img/avatar-1.jpg';
 
 const App: FC = () => {
   return (

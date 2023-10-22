@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Avatar, Divider, Button, Title, SmallText } from "shared";
+import { FC } from 'react';
+import { Avatar, Divider, Button, Title, SmallText } from 'shared';
 
 type Props = {
   avatar?: string;
@@ -7,7 +7,7 @@ type Props = {
   description: string;
 };
 
-export const UserCard: FC<Props> = ({ avatar = "", title, description }) => {
+export const UserCard: FC<Props> = ({ avatar = '', title, description }) => {
   return (
     <div className="p-6 bg-black-1 border-radius rounded-40 max-w-xs text-white">
       <Avatar className="mb-5" avatar={avatar} size={219} />
