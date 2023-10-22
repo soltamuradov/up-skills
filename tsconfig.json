@@ -18,5 +18,10 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "exclude": [
+    "./cypress.config.ts",
+    "cypress",
+    "**/*.cy.tsx"
+  ]
 }

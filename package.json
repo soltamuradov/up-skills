@@ -10,7 +10,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "test": "jest",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cp": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,6 @@
   },
   "lint-staged": {
     "*/**/*.{js,jsx,ts,tsx}": [
-      "prettier --write",
       "npm run test"
     ]
   },
@@ -54,6 +54,7 @@
     "@types/webpack-dev-server": "^4.7.2",
     "autoprefixer": "^10.4.16",
     "css-loader": "^6.8.1",
+    "cypress": "^13.3.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.3",
