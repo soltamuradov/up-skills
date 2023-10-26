@@ -1,1 +1,1 @@
-export * from './productsReducer'
+export * from './productsReducer';
