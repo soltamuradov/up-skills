@@ -21,7 +21,7 @@ export const QuestionsReact = () => {
         ))}
       </ul>
 
-      <Button onClick={() => setPage(prev => prev +1)}>еще</Button>
+      <Button onClick={() => setPage((prev) => prev + 1)}>еще</Button>
     </div>
   );
 };
