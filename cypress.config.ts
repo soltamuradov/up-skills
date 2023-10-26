@@ -7,5 +7,6 @@ export default defineConfig({
     },
     video: false,
     baseUrl: 'http://localhost:3000',
+    supportFile: false,
   },
 });

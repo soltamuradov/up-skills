@@ -1,5 +1,7 @@
 describe('My First Test', () => {
-  it('Does not do much!', () => {
-    expect(true).to.equal(false);
-  });
+  it('should have a button', () => {
+    cy.visit('/react-questions')
+
+    cy.get('button').should('have.text', 'еще')
+  })
 });

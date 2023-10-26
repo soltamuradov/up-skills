@@ -1,1 +1,1 @@
-export * from './QuestionsReact'
+export * from './QuestionsReact';
