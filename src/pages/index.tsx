@@ -9,7 +9,7 @@ import { MainPage } from './MainPage';
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<MainPage />}/>
+      <Route path="/" element={<MainPage />} />
       <Route path="react-questions" element={<QuestionsReact />} />
     </>,
   ),
